@@ -2,6 +2,7 @@ package driver;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 public class DriverSingleton {
 
@@ -16,6 +17,8 @@ public class DriverSingleton {
 
 
             driver.manage().window().maximize();
+            ChromeOptions options = new ChromeOptions();
+            options.addArguments("--no-sandbox");
         }
         return driver;
     }
